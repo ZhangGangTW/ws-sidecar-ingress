@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: ingress-graphql-bff
+          uri: http://localhost:8080
+          predicates:
+            - Method=POST
+server:
+  port: 8002
