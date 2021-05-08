@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "com.ws"
-version = "0.0.1-SNAPSHOT"
+version = "1.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -53,5 +53,8 @@ tasks.withType<Test> {
 
 tasks.withType<BootBuildImage> {
     builder = "paketobuildpacks/builder:tiny"
-    environment = mapOf("BP_NATIVE_IMAGE" to "true")
+    imageName = "hataketed/${rootProject.name}:${version}"
+    environment = mapOf(
+        "BP_NATIVE_IMAGE" to "true"
+    )
 }

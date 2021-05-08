@@ -8,3 +8,12 @@ spring:
             - Method=POST
 server:
   port: 8002
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
